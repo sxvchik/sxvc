@@ -1,0 +1,891 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000; 
+    color: white;
+    min-height: 100vh;
+}
+
+.header {
+    position: relative;
+    height: calc(1698 / 1920 * 100vw);
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to bottom, 
+            rgba(0,0,0,0.8) 0%, 
+            rgba(0,0,0,0.5) 50%, 
+            rgba(0,0,0,0.2) 80%, 
+            transparent),
+        url(image/Монтажная\ область\ 1.png) center/cover;
+}
+
+.navbar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 50px;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+    gap: 15px;
+}
+
+.logo-ellipse {
+    width: 80px;
+    height: 80px;
+    background-color: #1c1c1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-ellipse img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.site-name:hover {
+    color: #DAA520; 
+    transform: none; 
+    text-shadow: 0 2px 3px rgba(218, 165, 32, 0.3);
+    background: none; 
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+    display: inline-block; 
+}
+
+.nav-links a:hover {
+    color: #DAA520;
+    transform: translateY(-3px); 
+    text-decoration: none;
+}
+
+.cart-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-link:hover {
+    color: #DAA520;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.cart-count {
+    background: #DAA520;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 100vh;
+    }
+    
+    main {
+        margin-top: -95vh;
+    }
+    
+    .catalog-container {
+        padding: 15px;
+        padding-top: 20px;
+    }
+
+    .catalog-content {
+        padding: 25px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .catalog-filters {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 85%;
+        height: calc(100vh - 80px);
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 999;
+        transition: left 0.3s ease;
+        padding: 20px;
+        padding-bottom: 80px;
+        overflow-y: auto;
+        border-radius: 0 15px 15px 0;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+    }
+
+    .catalog-filters.active {
+        left: 0;
+    }
+
+    .filter-section {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+        padding-bottom: 15px;
+    }
+
+    .filter-section:last-child {
+        border-bottom: none;
+        margin-bottom: 60px;
+    }
+
+    .filter-title {
+        color: #DAA520;
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+    }
+
+    .filter-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0 10px;
+    }
+
+    .filter-list li {
+        margin-bottom: 12px;
+    }
+
+    .filter-list label {
+        display: flex;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .filter-list label:hover {
+        color: #DAA520;
+    }
+
+    .filter-list input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: #DAA520;
+    }
+
+    .price-range {
+        padding: 15px 0;
+    }
+
+    .price-display {
+        text-align: center;
+        font-size: 16px;
+        color: #DAA520;
+        margin-bottom: 15px;
+    }
+
+    .price-slider {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .price-values {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 5px;
+    }
+
+    .reset-filters {
+        position: fixed;
+        bottom: 0;
+        left: -100%;
+        width: 85%;
+        padding: 15px;
+        margin: 0;
+        background: #DAA520;
+        color: white;
+        border: none;
+        border-radius: 0;
+        font-weight: 500;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .catalog-filters.active ~ .reset-filters {
+        left: 0;
+    }
+
+    .filter-toggle {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #DAA520;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 998;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .filter-toggle:hover {
+        background: #c6951e;
+        transform: scale(1.05);
+    }
+
+    .filter-toggle:active {
+        transform: scale(0.95);
+    }
+
+    .filter-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .filter-overlay.active {
+        display: block;
+    }
+
+    .site-name {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    
+    .logo-ellipse {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-container {
+        padding: 10px;
+        padding-top: 15px;
+    }
+
+    main {
+        margin-top: -90vh;
+    }
+
+    .catalog-content {
+        padding: 20px;
+    }
+
+    .products-grid {
+        gap: 15px;
+    }
+
+    .catalog-filters {
+        width: 90%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        padding-bottom: 70px;
+    }
+
+    .reset-filters {
+        width: 90%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .filter-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .filter-title {
+        font-size: 16px;
+    }
+
+    .filter-list label {
+        font-size: 14px;
+    }
+
+    .price-display {
+        font-size: 14px;
+    }
+
+    .site-name {
+        font-size: 16px;
+    }
+
+    .logo-ellipse {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar {
+        padding: 5px 10px;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .header {
+        height: 120vh;
+    }
+    
+    main {
+        margin-top: -100vh;
+    }
+    
+    .catalog-container {
+        padding-top: 25px;
+    }
+}
+
+@media (min-width: 1400px) {
+    main {
+        margin-top: -160vh;
+    }
+    
+    .catalog-container {
+        padding-top: 70px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+    main {
+        margin-top: -162vh;
+    }
+    
+    .catalog-container {
+        padding-top: 75px;
+    }
+}
+
+@media screen and (min-resolution: 192dpi) {
+    .header {
+        height: calc(1698 / 1920 * 100vw * 1.2);
+    }
+    
+    main {
+        margin-top: -170vh;
+    }
+    
+    .catalog-container {
+        padding-top: 85px;
+    }
+}
+
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+}
+
+/* Основные стили каталога */
+.catalog-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.catalog-content {
+    background: transparent;
+    border-radius: 15px;
+    position: relative;
+    padding: 40px;
+    color: white;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-top: 0;
+}
+
+.catalog-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Стиль заголовка "КАТАЛОГ" */
+.catalog-title {
+    text-align: center;
+    font-size: 32px;
+    color: #DAA520;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.catalog-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #DAA520; /* Изменено на сплошной цвет */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Стили для поиска */
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: rgba(218, 165, 32, 0.5);
+}
+
+.search-button {
+    padding: 0 25px;
+    background: #DAA520;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.search-button:hover {
+    background: #c6951e;
+}
+
+/* Стили фильтров */
+.catalog-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(218, 165, 32, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    color: #DAA520;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+}
+
+.filter-list label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-list label:hover {
+    color: #DAA520;
+}
+
+.filter-list input {
+    margin-right: 10px;
+    accent-color: #DAA520;
+}
+
+/* Стили ползунка цены */
+.price-range {
+    padding: 15px 0;
+}
+
+.price-display {
+    text-align: center;
+    font-size: 18px;
+    color: #DAA520;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.price-slider {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+    margin: 10px 0;
+    transition: all 0.3s;
+}
+
+.price-slider:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #DAA520;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.price-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: #c6951e;
+}
+
+.price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #DAA520;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+.reset-filters {
+    grid-column: 1 / -1;
+    padding: 12px;
+    background: transparent;
+    color: #DAA520;
+    border: 1px solid #DAA520;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.reset-filters:hover {
+    background: rgba(218, 165, 32, 0.1);
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: rgba(218, 165, 32, 0.3);
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #DAA520;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.product-brand {
+    font-size: 14px;
+    color: #DAA520;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart, .quick-view {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.add-to-cart {
+    background: #DAA520;
+    color: white;
+}
+
+.add-to-cart:hover {
+    background: #c6951e;
+}
+
+.quick-view {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.quick-view:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.page-button {
+    padding: 8px 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-button:hover, .page-button.active {
+    background: #DAA520;
+    border-color: #DAA520;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-content {
+        padding: 30px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .catalog-filters {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-title {
+        font-size: 28px;
+    }
+    
+    .filter-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-content {
+        padding: 25px 20px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .search-input {
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .search-button {
+        border-radius: 8px;
+        padding: 15px;
+    }
+    
+    .catalog-title {
+        font-size: 24px;
+    }
+    
+    .catalog-title::after {
+        width: 80px;
+        margin: 10px auto 0;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 2;
+    margin-top: -165vh;
+    padding-bottom: 50px;
+}
+

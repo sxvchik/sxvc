@@ -1,0 +1,475 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+header {
+    position: relative;
+    height: calc(1698 / 1920 * 100vw); 
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to bottom, 
+            rgba(0,0,0,0.8) 0%, 
+            rgba(0,0,0,0.5) 50%, 
+            rgba(0,0,0,0.2) 80%, 
+            transparent),
+        url(image/Монтажная\ область\ 1.png)  center/cover;
+}
+
+.navbar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 50px;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+    gap: 15px;
+}
+
+.logo-ellipse {
+    width: 80px;
+    height: 80px;
+    background-color: #1c1c1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-ellipse img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.site-name:hover {
+    color: #DAA520;
+    transform: none;
+    text-shadow: 0 2px 3px rgba(218, 165, 32, 0.3);
+    background: none;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+    display: inline-block; 
+}
+
+.nav-links a:hover {
+    color: #DAA520;
+    transform: translateY(-3px); 
+    text-decoration: none;
+}
+
+.cart-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-link:hover {
+    color: #DAA520;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.cart-count {
+    background: #DAA520;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .site-name {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    
+    .logo-ellipse {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-name {
+        font-size: 16px;
+    }
+
+    .logo-ellipse {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.account-container {
+    position: relative;
+    width: 100%;
+    max-width: 1240px;
+    margin: -140vh auto 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.account-content {
+    position: relative;
+    border-radius: 15px;
+    padding: 50px;
+    color: white;
+    overflow: hidden;
+    isolation: isolate;
+    background: rgba(20, 20, 20, 0.5);
+}
+
+.account-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.account-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    color: #DAA520;
+    font-weight: 500;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #DAA520;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: #DAA520;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #DAA520;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.account-btn {
+    width: 100%;
+    padding: 14px;
+    background: #DAA520;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.account-btn:hover {
+    background: #c6951e;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #DAA520;
+}
+
+.profile-info {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #DAA520;
+}
+
+.change-avatar {
+    background: none;
+    border: none;
+    color: #DAA520;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.info p {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+}
+
+.info strong {
+    color: #DAA520;
+    font-weight: 500;
+}
+
+.edit-profile-btn,
+.logout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.edit-profile-btn {
+    background: rgba(218, 165, 32, 0.1);
+    border: 1px solid #DAA520;
+    color: #DAA520;
+}
+
+.edit-profile-btn:hover {
+    background: rgba(218, 165, 32, 0.2);
+}
+
+.logout-btn {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #E74C3C;
+    color: #E74C3C;
+}
+
+.logout-btn:hover {
+    background: rgba(231, 76, 60, 0.2);
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.order-number {
+    font-weight: 500;
+    color: #DAA520;
+}
+
+.order-date {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.order-status {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.order-status.completed {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ECC71;
+}
+
+.order-status.processing {
+    background: rgba(241, 196, 15, 0.1);
+    color: #F1C40F;
+}
+
+.order-total {
+    font-weight: bold;
+}
+
+.order-products {
+    margin-bottom: 15px;
+}
+
+.order-products .product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.order-products img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.order-details-btn {
+    background: none;
+    border: none;
+    color: #DAA520;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .account-content {
+        padding: 30px;
+    }
+    
+    .profile-info {
+        flex-direction: column;
+    }
+    
+    .avatar {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-content {
+        padding: 25px 20px;
+    }
+    
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

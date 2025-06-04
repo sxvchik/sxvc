@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скиталец Shop - Туристические товары</title>
+    <meta name="description" content="Магазин товаров для пикника и туризма">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/burger-menu.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header"> 
+            <div class="header-background" aria-hidden="true"></div>
+            <nav class="navbar" aria-label="Основная навигация">
+                <div class="logo-container">
+                    <div class="logo-ellipse">
+                        <img src="image/Бфывезымянный-1.png" alt="Логотип Скиталец Shop">
+                    </div>
+                    <a href="../Main/index.html" class="site-name">Скиталец Shop</a>
+                </div>
+                
+                <button class="burger-menu" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links">
+                    <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                    <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                    <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                    <li><a href="../New products/New products.html">Новинки</a></li>
+                    <li><a href="../Brands/Brands.html">Бренды</a></li>
+                    <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                    <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                    <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                    <li>
+                        <a href="../Basket/Basket.html" class="cart-link">
+                            Корзина <span class="cart-count">2</span>
+                        </a>
+                    </li>
+                    <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+                </ul>
+
+                <div class="mobile-menu">
+                    <ul>
+                        <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                        <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                        <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                        <li><a href="../New products/New products.html">Новинки</a></li>
+                        <li><a href="../Brands/Brands.html">Бренды</a></li>
+                        <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                        <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                        <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                        <li><a href="../Basket/Basket.html" class="cart-link">Корзина <span class="cart-count">2</span></a></li>
+                        <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="recommended-container">
+                <div class="recommended-content">
+                    <h2 class="recommended-title">Акции и Спецпредложения</h2>
+                    
+                    <div class="recommended-grid">
+                        <div class="recommended-card">
+                            <div class="product-badge discount">-25%</div>
+                            <h3 class="product-name">Палатка Trekking Pro</h3>
+                            <div class="price-block">
+                                <span class="current-price">12 990 ₽</span>
+                                <span class="old-price">17 320 ₽</span>
+                            </div>
+                            <p class="product-description">3-местная палатка с защитой от дождя</p>
+                            <button class="add-to-cart-btn">В корзину</button>
+                        </div>
+                        
+                        <div class="recommended-card">
+                            <h3 class="product-name">Рюкзак Phantom 60L</h3>
+                            <div class="price-block">
+                                <span class="current-price">8 460 ₽</span>
+                            </div>
+                            <p class="product-description">Высококомфортный рюкзак для походов</p>
+                            <button class="add-to-cart-btn">В корзину</button>
+                        </div>
+                        
+                        <div class="recommended-card">
+                            <div class="product-badge discount">-15%</div>
+                            <h3 class="product-name">Газовая горелка FireMaster</h3>
+                            <div class="price-block">
+                                <span class="current-price">3 290 ₽</span>
+                                <span class="old-price">3 870 ₽</span>
+                            </div>
+                            <p class="product-description">Компактная и мощная горелка</p>
+                            <button class="add-to-cart-btn">В корзину</button>
+                        </div>
+                        
+                        <div class="recommended-card">
+                            <h3 class="product-name">Спальный мешок Polar -5°C</h3>
+                            <div class="price-block">
+                                <span class="current-price">6 790 ₽</span>
+                            </div>
+                            <p class="product-description">Теплый мешок для комфортного сна</p>
+                            <button class="add-to-cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/burger-menu.js"></script>
+     <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function addToCart(productId, name, price, image) {
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          id: productId,
+          name: name,
+          price: price,
+          image: image,
+          quantity: 1
+        });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCounter();
+    }
+
+    function updateCartCounter() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.querySelectorAll('.cart-count').forEach(el => {
+        el.textContent = totalItems;
+        el.style.display = totalItems ? 'inline-flex' : 'none';
+      });
+    }
+
+    function setupAddToCartButtons() {
+      document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const card = button.closest('.recommended-card');
+          if (!card) return;
+          const title = card.querySelector('.product-name')?.textContent?.trim() || '';
+          const priceText = card.querySelector('.current-price')?.textContent || '';
+          const image = card.querySelector('img')?.getAttribute('src') || '';
+          const productId = title.replace(/\s+/g, '-').toLowerCase();
+          const priceMatch = priceText.replace(/[^\d]/g, '');
+          const price = parseInt(priceMatch, 10) || 0;
+          addToCart(productId, title, price, image);
+        });
+      });
+    }
+
+    updateCartCounter();
+    setupAddToCartButtons();
+    </script>
+</body>
+</html>

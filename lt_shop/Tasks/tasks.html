@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скиталец Shop - Туристические товары</title>
+    <meta name="description" content="Магазин товаров для пикника и туризма">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/burger-menu.css">
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-background">
+        </div>
+        <nav class="navbar" aria-label="Основная навигация">
+            <div class="logo-container">
+                <div class="logo-ellipse">
+                    <img src="image/Бфывезымянный-1.png" alt="Логотип Скиталец Shop">
+                </div>
+                <a href="../Main/index.html" class="site-name">Скиталец Shop</a>
+            </div>
+            
+            <button class="burger-menu" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                <li><a href="../New products/New products.html">Новинки</a></li>
+                <li><a href="../Brands/Brands.html">Бренды</a></li>
+                <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                <li>
+                    <a href="../Basket/Basket.html" class="cart-link">
+                        Корзина <span class="cart-count">2</span>
+                    </a>
+                </li>
+                <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+            </ul>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                    <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                    <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                    <li><a href="../New products/New products.html">Новинки</a></li>
+                    <li><a href="../Brands/Brands.html">Бренды</a></li>
+                    <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                    <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                    <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                    <li><a href="../Basket/Basket.html" class="cart-link">Корзина <span class="cart-count">2</span></a></li>
+                    <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tasks-container">
+            <div class="tasks-content">
+                <h2 class="tasks-title">Распределение задач</h2>
+                
+                <div class="developers-grid">
+                    <!-- Разработчик 1 -->
+                    <div class="developer-card">
+                        <div class="dev-header">
+                            <div class="dev-avatar" style="background: linear-gradient(135deg, #E74C3C, #C0392B);">Д1</div>
+                            <div>
+                                <h3 class="dev-name">Алексей (Frontend)</h3>
+                                <div class="dev-specialty">React, TypeScript</div>
+                            </div>
+                            <div class="dev-badge" style="background: #3498DB;">Lead</div>
+                        </div>
+                        
+                        <div class="tasks-list">
+                            <div class="task-item" style="border-left: 4px solid #E74C3C;">
+                                <div class="task-title">Интеграция слайдера</div>
+                                <div class="task-meta">
+                                    <span class="task-status" style="color: #DAA520;">В работе</span>
+                                    <span class="task-deadline">Срок: 15.06</span>
+                                </div>
+                                <div class="task-progress" style="--progress: 65%;"></div>
+                            </div>
+                            
+                            <div class="task-item" style="border-left: 4px solid #3498DB;">
+                                <div class="task-title">Адаптив меню</div>
+                                <div class="task-meta">
+                                    <span class="task-status" style="color: #2ECC71;">На проверке</span>
+                                    <span class="task-deadline">Срок: 10.06</span>
+                                </div>
+                                <div class="task-progress" style="--progress: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Разработчик 2 -->
+                    <div class="developer-card">
+                        <div class="dev-header">
+                            <div class="dev-avatar" style="background: linear-gradient(135deg, #DAA520, #F39C12);">Д2</div>
+                            <div>
+                                <h3 class="dev-name">Мария (Backend)</h3>
+                                <div class="dev-specialty">Node.js, MongoDB</div>
+                            </div>
+                            <div class="dev-badge" style="background: #2ECC71;">Senior</div>
+                        </div>
+                        
+                        <div class="tasks-list">
+                            <div class="task-item" style="border-left: 4px solid #DAA520;">
+                                <div class="task-title">API корзины</div>
+                                <div class="task-meta">
+                                    <span class="task-status" style="color: #2ECC71;">Завершено</span>
+                                    <span class="task-deadline">Сдано: 05.06</span>
+                                </div>
+                                <div class="task-progress" style="--progress: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Разработчик 3 -->
+                    <div class="developer-card">
+                        <div class="dev-header">
+                            <div class="dev-avatar" style="background: linear-gradient(135deg, #3498DB, #2980B9);">Д3</div>
+                            <div>
+                                <h3 class="dev-name">Иван (Fullstack)</h3>
+                                <div class="dev-specialty">Vue, Express</div>
+                            </div>
+                            <div class="dev-badge" style="background: #9B59B6;">Middle</div>
+                        </div>
+                        
+                        <div class="tasks-list">
+                            <div class="task-item" style="border-left: 4px solid #2ECC71;">
+                                <div class="task-title">Рефакторинг</div>
+                                <div class="task-meta">
+                                    <span class="task-status" style="color: #aaa;">В плане</span>
+                                    <span class="task-deadline">Срок: 20.06</span>
+                                </div>
+                                <div class="task-progress" style="--progress: 10%;"></div>
+                            </div>
+                            
+                            <div class="task-item" style="border-left: 4px solid #E74C3C;">
+                                <div class="task-title">Оптимизация БД</div>
+                                <div class="task-meta">
+                                    <span class="task-status" style="color: #DAA520;">В работе</span>
+                                    <span class="task-deadline">Срок: 18.06</span>
+                                </div>
+                                <div class="task-progress" style="--progress: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>     
+    <script src="../shared/burger-menu.js"></script>
+</body>
+</html>

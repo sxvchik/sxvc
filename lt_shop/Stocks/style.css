@@ -1,0 +1,600 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    height: calc(1698 / 1920 * 100vw);
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to bottom, 
+            rgba(0,0,0,0.8) 0%, 
+            rgba(0,0,0,0.5) 50%, 
+            rgba(0,0,0,0.2) 80%, 
+            transparent),
+        url(image/Монтажная\ область\ 1.png) center/cover;
+}
+
+.navbar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 50px;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+    gap: 15px;
+}
+
+.logo-ellipse {
+    width: 80px;
+    height: 80px;
+    background-color: #1c1c1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-ellipse img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.site-name:hover {
+    color: #DAA520; 
+    transform: none; 
+    text-shadow: 0 2px 3px rgba(218, 165, 32, 0.3);
+    background: none; 
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+    display: inline-block; 
+}
+
+.nav-links a:hover {
+    color: #DAA520;
+    transform: translateY(-3px); 
+    text-decoration: none;
+}
+
+.cart-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-link:hover {
+    color: #DAA520;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.cart-count {
+    background: #DAA520;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .site-name {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    
+    .logo-ellipse {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-name {
+        font-size: 16px;
+    }
+
+    .logo-ellipse {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+main {
+    margin-top: -160vh;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 1400px) {
+    main {
+        margin-top: -150vh;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+    main {
+        margin-top: -155vh;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: -115vh;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin-top: -105vh;
+    }
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+.recommended-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.recommended-content {
+    background: transparent;
+    border-radius: 15px;
+    position: relative;
+    padding: 40px;
+    color: white;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-top: 0;
+}
+
+.recommended-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.recommended-title {
+    text-align: center;
+    font-size: 32px;
+    color: #DAA520;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.recommended-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #DAA520;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Карточка товара */
+.recommended-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.recommended-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(218, 165, 32, 0.4);
+}
+
+/* Бейдж скидки */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.product-badge.discount {
+    background: #E74C3C;
+    color: white;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 15px 0 10px 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Блок цены */
+.price-block {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    font-size: 22px;
+    color: #DAA520;
+    font-weight: bold;
+}
+
+.old-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: rgba(255,255,255,0.4);
+}
+
+.product-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Кнопка */
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #DAA520;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    font-weight: 500;
+    text-align: center;
+}
+
+.add-to-cart-btn:hover {
+    background: #c6951e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 1024px) {
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recommended-container {
+        margin: -700px auto 50px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: calc(2000 / 1920 * 100vw);
+    }
+
+    .recommended-container {
+        padding: 15px;
+        padding-top: 40px;
+    }
+
+    .recommended-content {
+        padding: 30px 20px;
+    }
+
+    .recommended-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .recommended-grid {
+        gap: 20px;
+    }
+
+    .recommended-card {
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 18px;
+    }
+
+    .site-name {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .logo-ellipse {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: calc(2200 / 1920 * 100vw);
+    }
+
+    .recommended-container {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
+    .recommended-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommended-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .recommended-title::after {
+        width: 80px;
+        margin: 10px auto 0;
+    }
+
+    .site-name {
+        font-size: 16px;
+    }
+
+    .logo-ellipse {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar {
+        padding: 5px 10px;
+        top: 15px;
+    }
+
+    .recommended-card {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .current-price {
+        font-size: 18px;
+    }
+
+    .old-price {
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .recommended-container {
+        padding: 15px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .recommended-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recommended-container {
+        margin: -700px auto 50px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: calc(2000 / 1920 * 100vw);
+    }
+
+    .recommended-container {
+        padding: 15px;
+        padding-top: 40px;
+    }
+
+    .recommended-content {
+        padding: 30px 20px;
+    }
+
+    .recommended-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .recommended-grid {
+        gap: 20px;
+    }
+
+    .recommended-card {
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 18px;
+    }
+
+    .site-name {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .logo-ellipse {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: calc(2200 / 1920 * 100vw);
+    }
+
+    .recommended-container {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
+    .recommended-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommended-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .recommended-title::after {
+        width: 80px;
+        margin: 10px auto 0;
+    }
+
+    .site-name {
+        font-size: 16px;
+    }
+
+    .logo-ellipse {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar {
+        padding: 5px 10px;
+        top: 15px;
+    }
+
+    .recommended-card {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .current-price {
+        font-size: 18px;
+    }
+
+    .old-price {
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

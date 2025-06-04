@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скиталец Shop - Туристические товары</title>
+    <meta name="description" content="Магазин товаров для пикника и туризма">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/burger-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-background"></div>
+        <nav class="navbar" aria-label="Основная навигация">
+            <div class="logo-container">
+                <div class="logo-ellipse">
+                    <img src="image/Бфывезымянный-1.png" alt="Логотип Скиталец Shop">
+                </div>
+                <a href="../Main/index.html" class="site-name">Скиталец Shop</a>
+            </div>
+            
+            <button class="burger-menu" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                <li><a href="../New products/New products.html">Новинки</a></li>
+                <li><a href="../Brands/Brands.html">Бренды</a></li>
+                <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                <li>
+                    <a href="../Basket/Basket.html" class="cart-link">
+                        Корзина <span class="cart-count">2</span>
+                    </a>
+                </li>
+                <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+            </ul>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                    <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                    <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                    <li><a href="../New products/New products.html">Новинки</a></li>
+                    <li><a href="../Brands/Brands.html">Бренды</a></li>
+                    <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                    <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                    <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                    <li><a href="../Basket/Basket.html" class="cart-link">Корзина <span class="cart-count">2</span></a></li>
+                    <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalog-container">
+            <div class="catalog-content">
+                <h2 class="catalog-title">Каталог</h2>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск товаров..." class="search-input">
+                    <button class="search-button">Найти</button>
+                </div>
+                
+                <button class="filter-toggle" aria-label="Открыть фильтры">
+                    <i class="fas fa-filter"></i>
+                </button>
+                
+                <div class="filter-overlay"></div>
+                <div class="catalog-filters">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Категории</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" checked> Палатки</label></li>
+                            <li><label><input type="checkbox" checked> Спальные мешки</label></li>
+                            <li><label><input type="checkbox" checked> Рюкзаки</label></li>
+                            <li><label><input type="checkbox" checked> Горелки</label></li>
+                            <li><label><input type="checkbox" checked> Посуда</label></li>
+                            <li><label><input type="checkbox" checked> Кемпинговая мебель</label></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">Бренды</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" checked> NatureHike</label></li>
+                            <li><label><input type="checkbox" checked> Coleman</label></li>
+                            <li><label><input type="checkbox" checked> Petromax</label></li>
+                            <li><label><input type="checkbox" checked> Snow Peak</label></li>
+                            <li><label><input type="checkbox" checked> Stanley</label></li>
+                            <li><label><input type="checkbox" checked> Fire-Maple</label></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">Цена</h3>
+                        <div class="price-range">
+                            <div id="priceDisplay" class="price-display">0 - 25 000 руб.</div>
+                            <input type="range" min="0" max="50000" value="25000" step="1000" class="price-slider" id="priceRange">
+                            <div class="price-values">
+                                <span>0 руб.</span>
+                                <span>50 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="reset-filters">Сбросить фильтры</button>
+                
+                <div class="products-grid">
+                  
+                    <div class="product-card">
+                        <div class="product-badge">Хит</div>
+                        <img src="image/Палатка1-1-восстановлено.png" alt="Палатка NatureHike" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Палатка NatureHike Cloud-Up 2</h3>
+                            <div class="product-brand">NatureHike</div>
+                            <div class="product-price">12 990 руб.</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <img src="image/Спальник1-1-восстановлено.png" alt="Спальный мешок Coleman" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Спальник Coleman Cocoon 0°C</h3>
+                            <div class="product-brand">Coleman</div>
+                            <div class="product-price">8 490 руб.</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <img src="image/Рюкзак1-1-восстановлено.png" alt="Рюкзак Osprey" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Рюкзак Osprey Talon 44</h3>
+                            <div class="product-brand">Osprey</div>
+                            <div class="product-price">14 500 руб.</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="product-card">
+                        <div class="product-badge">Новинка</div>
+                        <img src="image/Горелка1-1-восстановлено.png" alt="Горелка Fire-Maple" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Горелка Fire-Maple FMS-117</h3>
+                            <div class="product-brand">Fire-Maple</div>
+                            <div class="product-price">3 990 руб.</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="product-card">
+                        <img src="image/Термос1-1-восстановлено.png" alt="Термос Stanley" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Термос Stanley Classic 1.0L</h3>
+                            <div class="product-brand">Stanley</div>
+                            <div class="product-price">5 290 руб.</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="product-card">
+                        <div class="product-badge">Акция</div>
+                        <img src="image/Стул1-1-восстановлено.png" alt="Кресло Snow Peak" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Кресло Snow Peak Low Beach</h3>
+                            <div class="product-brand">Snow Peak</div>
+                            <div class="product-price">12 800 руб. <span class="old-price">15 000 руб.</span></div>
+                            <div class="product-actions">
+                                <button class="add-to-cart">В корзину</button>
+                                <button class="quick-view">Быстрый просмотр</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="pagination">
+                    <button class="page-button active">1</button>
+                    <button class="page-button">2</button>
+                    <button class="page-button">3</button>
+                    <button class="page-button next">Следующая →</button>
+                </div>
+            </div>
+        </div>
+    
+        
+        <script src="../shared/burger-menu.js"></script>
+        <script src="catalog.js"></script>
+</body>
+</html>

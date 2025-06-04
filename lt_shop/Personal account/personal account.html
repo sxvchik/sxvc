@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скиталец Shop - Туристические товары</title>
+    <meta name="description" content="Магазин товаров для пикника и туризма">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/burger-menu.css">
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-background" aria-hidden="true"></div>
+        <nav class="navbar" aria-label="Основная навигация">
+            <div class="logo-container">
+                <div class="logo-ellipse">
+                    <img src="image/Бфывезымянный-1.png" alt="Логотип Скиталец Shop">
+                </div>
+                <a href="../Main/index.html" class="site-name">Скиталец Shop</a>
+            </div>
+            
+            <button class="burger-menu" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                <li><a href="../New products/New products.html">Новинки</a></li>
+                <li><a href="../Brands/Brands.html">Бренды</a></li>
+                <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                <li>
+                    <a href="../Basket/Basket.html" class="cart-link">
+                        Корзина <span class="cart-count">2</span>
+                    </a>
+                </li>
+                <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+            </ul>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="../About the Company/About the Company.html">О Компании</a></li>
+                    <li><a href="../Catalog/Catalog.html">Каталог</a></li>
+                    <li><a href="../Stocks/Stocks.html">Акции</a></li>
+                    <li><a href="../New products/New products.html">Новинки</a></li>
+                    <li><a href="../Brands/Brands.html">Бренды</a></li>
+                    <li><a href="../Reviews/Reviews.html">Отзывы</a></li>
+                    <li><a href="../Contacts/Contacts.html">Контакты</a></li>
+                    <li><a href="https://sport-marafon.ru/article/vybiraem-turisticheskoe-snaryazhenie-sbornik-statey/">Полезные статьи</a></li>
+                    <li><a href="../Basket/Basket.html" class="cart-link">Корзина <span class="cart-count">2</span></a></li>
+                    <li><a href="../Personal account/personal account.html">Личный Кабинет</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="account-container">
+            <div class="account-content">
+                
+                <div class="account-tabs">
+                    <button class="tab-btn active" data-tab="login">Вход</button>
+                    <button class="tab-btn" data-tab="register">Регистрация</button>
+                    <button class="tab-btn" data-tab="profile" style="display:none">Профиль</button>
+                    <button class="tab-btn" data-tab="orders" style="display:none">Мои заказы</button>
+                </div>
+        
+                
+                <div class="tab-content active" id="login">
+                    <h3>Вход в аккаунт</h3>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Пароль" required>
+                        </div>
+                        <button type="submit" class="account-btn">Войти</button>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </form>
+                </div>
+        
+                
+                <div class="tab-content" id="register">
+                    <h3>Регистрация</h3>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Пароль" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Повторите пароль" required>
+                        </div>
+                        <button type="submit" class="account-btn">Зарегистрироваться</button>
+                    </form>
+                </div>
+        
+                
+                <div class="tab-content" id="profile">
+                    <h3>Мой профиль</h3>
+                    <div class="profile-info">
+                        <div class="avatar">
+                            <img src="images/avatars/default.jpg" alt="Аватар">
+                            <button class="change-avatar">Изменить</button>
+                        </div>
+                        <div class="info">
+                            <p><strong>Имя:</strong> <span id="userName">Иван Иванов</span></p>
+                            <p><strong>Email:</strong> <span id="userEmail">user@example.com</span></p>
+                            <p><strong>Телефон:</strong> <span id="userPhone">+7 (123) 456-78-90</span></p>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn">Редактировать профиль</button>
+                    <button class="logout-btn">Выйти</button>
+                </div>
+        
+               
+                <div class="tab-content" id="orders">
+                    <h3>История заказов</h3>
+                    <div class="orders-list">
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-number">Заказ #12345</span>
+                                <span class="order-date">15.05.2024</span>
+                                <span class="order-status completed">Выполнен</span>
+                                <span class="order-total">12 990 ₽</span>
+                            </div>
+                            <div class="order-products">
+                                <div class="product">
+                                    <img src="images/products/tent.jpg" alt="Палатка">
+                                    <span>Палатка Trekking Pro ×1</span>
+                                </div>
+                            </div>
+                            <button class="order-details-btn">Подробнее</button>
+                        </div>
+                        
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-number">Заказ #12344</span>
+                                <span class="order-date">10.05.2024</span>
+                                <span class="order-status processing">В обработке</span>
+                                <span class="order-total">8 460 ₽</span>
+                            </div>
+                            <div class="order-products">
+                                <div class="product">
+                                    <img src="images/products/backpack.jpg" alt="Рюкзак">
+                                    <span>Рюкзак Phantom 60L ×1</span>
+                                </div>
+                            </div>
+                            <button class="order-details-btn">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/account.js"></script>
+    <script src="../shared/burger-menu.js"></script>
+</body>
+</html>
